@@ -3,6 +3,6 @@ services:
   khaled.sh:
     restart: always
     container_name: khaled.sh
-    image: "khaled.sh:latest"
+    image: "khaledalmana/personal:latest"
     ports:
       - "8080:80"
