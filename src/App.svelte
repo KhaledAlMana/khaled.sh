@@ -3,15 +3,10 @@
 	import LinkedIn from "./lib/LinkedIn.svelte";
 	import Telegram from "./lib/Telegram.svelte";
 
-	const contactMessage = encodeURI(
-		"As-salamu alaykum (Hello),\nI'm reaching you out via khaled.sh.\nWhen can we talk?\nThanks."
-	);
-
 	const requestCV = encodeURI(
 		"As-salamu alaykum (Hello),\nI'm reaching you out via khaled.sh.\nCan you please send me your latest CV?\nThanks."
 	);
 
-	const phoneNumber = "966542430800";
 	const tgUser = "khaledalmana";
 </script>
 
