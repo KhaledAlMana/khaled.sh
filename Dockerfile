@@ -1,5 +1,4 @@
-# Build image
-FROM node:latest as application
+FROM node:latest as build
 
 WORKDIR /var/app
 
@@ -9,23 +8,13 @@ RUN npm ci && npm cache clean --force
 COPY ./ .
 RUN npm run build
 
-## Final image
-FROM nginx:alpine
-
-# set timezone to GMT time zone
-# replace shell with bash
-# install base dependencies
-ENV TZ=GMT
-RUN echo $TZ > /etc/timezone \
-    && echo $TZ > /etc/localtime \
-    && apk update \
-    && apk upgrade
+FROM nginx:latest
 
 ## Custom NGINX settings
-COPY --from=application /var/app/docker-configs/nginx.conf /etc/nginx/nginx.conf
-COPY --from=application /var/app/docker-configs/default.conf /etc/nginx/conf.d/default.conf
+COPY --from=build /var/app/docker-configs/nginx.conf /etc/nginx/nginx.conf
+COPY --from=build /var/app/docker-configs/default.conf /etc/nginx/conf.d/default.conf
 
 ## Application folder
 WORKDIR /usr/share/nginx/html
 
-COPY --from=application /var/app/public .
+COPY --from=build /var/app/dist .
