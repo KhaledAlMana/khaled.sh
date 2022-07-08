@@ -53,6 +53,6 @@ jobs:
       - name: SSH Execute Commands
         uses: JimCronqvist/action-ssh@0.1.1
         with:
-          command: cd ~/my-resume && docker-compose pull && docker-compose up -d
+          command: cd ~/khaled.sh && docker-compose pull && docker-compose up -d
           hosts: ${{ secrets.USER }}@${{ secrets.HOST }}
           privateKey: ${{ secrets.PRIVATE_KEY }}

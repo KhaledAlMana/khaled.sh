@@ -1,0 +1,8 @@
+version: '3'
+services:
+  khaled.sh:
+    restart: always
+    container_name: khaled.sh
+    image: "khaled.sh:latest"
+    ports:
+      - "8080:80"
