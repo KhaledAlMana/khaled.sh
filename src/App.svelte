@@ -18,14 +18,14 @@
 	<hr />
 	<Typewriter>
 		<br />
-		<p>Thank you for visiting this page.</p>
+		<p>Thank you for visiting my page.</p>
 		<p>
-			If you're seeking to get my CV, please feel free to reach me out via the
-			below channels.
+			If you're seeking to contact me for any matter, please feel free to reach
+			me out via the below channels.
 		</p>
 		<br />
 		<LinkedIn />
-		<Telegram message={requestCV} {tgUser} />
+		<Telegram {tgUser} />
 	</Typewriter>
 </main>
 

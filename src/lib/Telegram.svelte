@@ -1,9 +1,8 @@
 <script lang="ts">
-	export let message: string;
 	export let tgUser: string;
 </script>
 
-<a href="https://t.me/{tgUser}?message={message}" target="_blank"> Telegram </a>
+<a href="https://t.me/{tgUser}" target="_blank"> Telegram </a>
 
 <style>
 	a {
