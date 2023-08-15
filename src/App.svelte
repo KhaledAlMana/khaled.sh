@@ -2,6 +2,7 @@
 	import Typewriter from "svelte-typewriter";
 	import LinkedIn from "./lib/LinkedIn.svelte";
 	import Telegram from "./lib/Telegram.svelte";
+	import GitHub from "./lib/GitHub.svelte";
 
 	const requestCV = encodeURI(
 		"As-salamu alaykum (Hello),\nI'm reaching you out via khaled.sh.\nCan you please send me your latest CV?\nThanks."
@@ -26,6 +27,7 @@
 		<br />
 		<LinkedIn />
 		<Telegram {tgUser} />
+		<GitHub />
 	</Typewriter>
 </main>
 
